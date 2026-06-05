@@ -1,0 +1,326 @@
+
+made by Geroso,Canoy,Ramirez
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawsFirst — Animal Care</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">🐾 Paws<span>First</span></a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home"     onclick="setActive(this)">Home</a></li>
+    <li><a href="#about"    onclick="setActive(this)">About Us</a></li>
+    <li><a href="#services" onclick="setActive(this)">Services</a></li>
+    <li><a href="#contact"  onclick="setActive(this)">Contact</a></li>
+  </ul>
+
+  <!-- Search bar -->
+  <div class="nav-search">
+    <input
+      type="text"
+      id="navSearchInput"
+      placeholder="Search services…"
+      onkeydown="handleSearchKey(event)"
+    />
+    <button onclick="openSearch()" title="Search">🔍</button>
+  </div>
+
+  <!-- Mobile hamburger button -->
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="home">
+  <div class="hero-inner section-inner">
+
+    <div class="hero-text">
+      <span class="badge">Trusted Animal Care</span>
+      <h1>Caring for Your <em>Beloved</em> Pets</h1>
+      <p>Professional veterinary care, grooming, and boarding services — because your animals deserve the very best.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary" onclick="scrollToContact()">Book an Appointment</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+
+      <!-- ═══════════════════════════════════════════════════
+           HERO SLIDESHOW
+           To use your own images, replace the placeholder
+           divs below with <img> tags, e.g.:
+             <img src="dog.jpg" alt="Dog" class="slide-img"/>
+           Add or remove .slide items as needed.
+           ═══════════════════════════════════════════════════ -->
+      <div class="hero-slider" id="heroSlider">
+
+        <!-- Slide 1 — replace div with your <img> -->
+        <div class="slide active">
+  <img src="dog.jpg" alt="Dog" class="slide-img"/>
+</div>
+
+        <!-- Slide 2 — replace div with your <img> -->
+        <div class="slide active">
+  <img src="dog2.jpg" alt="Dog" class="slide-img"/>
+</div>
+
+        <!-- Slide 3 — replace div with your <img> -->
+        <div class="slide active">
+  <img src="dog3.jpg" alt="Dog" class="slide-img"/>
+</div>
+
+        <!-- Slide 4 — replace div with your <img> -->
+        <div class="slide active">
+  <img src="dog4.jpg" alt="Dog" class="slide-img"/>
+</div>
+
+        <!-- Prev / Next arrows -->
+        <button class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Previous">&#8249;</button>
+        <button class="slider-btn next" onclick="moveSlide(1)"  aria-label="Next">&#8250;</button>
+
+        <!-- Dot indicators -->
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+
+      <div class="hero-stat">
+        <div>
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <div>
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">From routine check-ups to specialized care — we've got every paw, hoof, and wing covered.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🩺</div>
+        <h3>Veterinary Care</h3>
+        <p>Comprehensive health exams, vaccinations, diagnostics, and treatment plans tailored for each animal.</p>
+        <a href="#contact" class="service-link">Book visit →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛁</div>
+        <h3>Grooming</h3>
+        <p>Full-service grooming including bathing, trimming, nail care, and coat treatments for all breeds.</p>
+        <a href="#contact" class="service-link">Schedule →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏡</div>
+        <h3>Pet Boarding</h3>
+        <p>Safe, comfortable boarding with 24/7 supervision so your pet feels at home even when you're away.</p>
+        <a href="#contact" class="service-link">Reserve a spot →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🦷</div>
+        <h3>Dental Care</h3>
+        <p>Professional dental cleanings, oral exams, and hygiene advice to keep your pet's smile healthy.</p>
+        <a href="#contact" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💉</div>
+        <h3>Vaccinations</h3>
+        <p>Complete vaccination schedules for puppies, kittens, and adult pets following latest health guidelines.</p>
+        <a href="#contact" class="service-link">View schedule →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🐾</div>
+        <h3>Emergency Care</h3>
+        <p>Round-the-clock emergency veterinary services for those unexpected and critical moments.</p>
+        <a href="#contact" class="service-link">Call now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+
+      <div class="about-img-wrap">
+        <!--
+          ╔══════════════════════════════════════════════════╗
+          ║  ABOUT IMAGE — replace this div with:           ║
+          ║  <img src="your-team-photo.jpg"                 ║
+          ║       alt="Our caring team"                     ║
+          ║       style="width:100%;aspect-ratio:1;         ║
+          ║       border-radius:30px 30px 120px 30px;       ║
+          ║       object-fit:cover;                         ║
+          ║       box-shadow:0 20px 60px var(--shadow)"/>   ║
+          ╚══════════════════════════════════════════════════╝
+        -->
+        <img src="vet.png"
+        alt="Our caring team"
+        style="width:100%;aspect-ratio:1;
+         border-radius:30px 30px 120px 30px;
+         object-fit:cover;  
+          box-shadow:0 20px 60px var(--shadow)"/>
+
+      <div>
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">About PawsFirst</h2>
+        <p class="section-sub">Founded by passionate animal lovers, PawsFirst has been a trusted partner for pet owners for over a decade. We believe every animal deserves compassionate, expert care.</p>
+
+        <div class="about-features">
+          <div class="about-feat">
+            <div class="feat-dot"></div>
+            <p><strong>Expert Team</strong> — Our licensed vets and technicians bring years of experience and genuine love for animals.</p>
+          </div>
+          <div class="about-feat">
+            <div class="feat-dot"></div>
+            <p><strong>Modern Facilities</strong> — State-of-the-art equipment and a clean, stress-free environment for your pet.</p>
+          </div>
+          <div class="about-feat">
+            <div class="feat-dot"></div>
+            <p><strong>Community Focused</strong> — We partner with local shelters and run free annual wellness events.</p>
+          </div>
+        </div>
+
+        <br/>
+        <a href="#contact" class="btn-primary">Meet Our Team</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-sub" style="color:#c0a090">Ready to book or have a question? Reach out — we'd love to hear from you.</p>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-ico">📍</div>
+          <div>
+            <h4>Address</h4>
+            <p>123 Animal Lane, Pawsville, PH 6000</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p>+63 912 345 6789</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>hello@pawsfirst.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-ico">🕐</div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon–Sat: 8:00 AM – 6:00 PM<br/>Sun: 9:00 AM – 3:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" id="fname" placeholder="Juan Dela Cruz"/>
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" id="femail" placeholder="juan@email.com"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Service</label>
+          <select id="fservice">
+            <option value="">Select a service…</option>
+            <option>Veterinary Care</option>
+            <option>Grooming</option>
+            <option>Pet Boarding</option>
+            <option>Dental Care</option>
+            <option>Vaccinations</option>
+            <option>Emergency Care</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea id="fmessage" placeholder="Tell us about your pet and how we can help…"></textarea>
+        </div>
+        <button class="btn-send" onclick="sendMessage()">Send Message 🐾</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <p>© 2026 PawsFirst Animal Care. Made with ❤️ for pets everywhere.</p>
+</footer>
+
+
+<!-- ═══════════════ SEARCH OVERLAY ═══════════════ -->
+<div class="search-overlay" id="searchOverlay" onclick="closeSearchOnBg(event)">
+  <div class="search-box">
+    <h3>🔍 Search PawsFirst</h3>
+    <div class="search-input-wrap">
+      <input
+        type="text"
+        id="searchMain"
+        placeholder="e.g. grooming, dental, boarding…"
+        onkeydown="handleOverlayKey(event)"
+      />
+      <button onclick="runSearch()">Search</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <span class="search-close" onclick="closeSearch()">✕ Close</span>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
